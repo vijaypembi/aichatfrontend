@@ -18,7 +18,7 @@ const Topbar = () => {
     const onLogOut = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("userDetails");
-        navigate("/");  
+        navigate("/login");  
     };
     return (
         <div className="bg-white shadow-md w-full flex items-center justify-between px-4 md:px-6 py-3">
