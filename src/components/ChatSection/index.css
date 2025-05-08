@@ -1,0 +1,14 @@
+.markdown-content {
+    font-size: 15px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.markdown-content strong {
+    font-weight: 600;
+}
+
+.markdown-content ul {
+    padding-left: 1.5em;
+    list-style-type: disc;
+}
