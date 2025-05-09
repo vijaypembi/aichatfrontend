@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useNavigate , NavLink } from "react-router-dom";
 import { FiBell } from "react-icons/fi"; // Feather Bell icon
 
 const Topbar = () => {
+    const navigate = useNavigate();
     let userDetails = {};
     try {
         userDetails = JSON.parse(localStorage.getItem("userDetails") || "{}");
@@ -14,7 +15,11 @@ const Topbar = () => {
     const [isActiveNotification, setIsActiveNotification] = useState(false);
     const [notificationCount] = useState(3);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    const onLogOut = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("userDetails");
+        navigate("/login");  
+    };
     return (
         <div className="bg-white shadow-md w-full flex items-center justify-between px-4 md:px-6 py-3">
             <NavLink
@@ -54,7 +59,7 @@ const Topbar = () => {
                                 <button className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100">
                                     Settings
                                 </button>
-                                <button className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100">
+                                <button onClick={() => onLogOut()}  className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100">
                                     Logout
                                 </button>
                             </div>
