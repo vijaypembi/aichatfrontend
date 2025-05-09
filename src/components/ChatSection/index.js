@@ -203,12 +203,23 @@ const ChatSection = ({ prevChats, err }) => {
                                 : "bg-blue-500 hover:bg-blue-600 text-white"
                         }`}
                     >
-                        {loading ? (
-                            <span className="flex items-center">
-                                <span className="animate-spin mr-2">↻</span>
+                        {!loading ? (
+                            <>
+                                <span
+                                    className="inline-block h-5 w-5 animate-spin rounded-full border-2 mr-2 mt-1 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                                    role="status"
+                                >
+                                    <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                                        Loading...
+                                    </span>
+                                </span>
                                 Sending...
-                            </span>
+                            </>
                         ) : (
+                            // <span className="flex items-center">
+                            //     <span className="animate-spin mr-2">↻</span>
+                            // Sending...
+                            // </span>
                             "Send"
                         )}
                     </button>
