@@ -174,15 +174,13 @@ const ChatSection = ({ prevChats, err }) => {
                 )}
 
                 <div className="flex gap-1">
-                    <label className="flex items-center sm:max-w-sm px-3 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 cursor-pointer transition-colors">
+                    <label className="flex items-center sm:max-w-sm px-2 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 cursor-pointer transition-colors">
                         <input
                             type="file"
                             onChange={handleFileChange}
                             className="hidden"
                         />
-                        <span className="text-sm sm:px-1 sm:py-1 sm:text-base">
-                            Attach
-                        </span>
+                        <span className="text-xs">Attach</span>
                     </label>
 
                     <input
