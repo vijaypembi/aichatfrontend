@@ -166,21 +166,23 @@ const ChatSection = ({ prevChats, err }) => {
                 </div>
             </div>
 
-            <div className="border-t fixed bottom-0 w-full bg-white p-4 shrink-0">
+            <div className="border-t fixed bottom-0 w-full sm:pr-10 bg-white p-4 shrink-0">
                 {error && (
                     <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-lg text-sm">
                         {error}
                     </div>
                 )}
 
-                <div className="flex gap-2">
-                    <label className="flex items-center px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 cursor-pointer transition-colors">
+                <div className="flex gap-1">
+                    <label className="flex items-center sm:max-w-sm px-3 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 cursor-pointer transition-colors">
                         <input
                             type="file"
                             onChange={handleFileChange}
                             className="hidden"
                         />
-                        Attach
+                        <span className="text-sm sm:px-1 sm:py-1 sm:text-base">
+                            Attach
+                        </span>
                     </label>
 
                     <input
@@ -188,14 +190,14 @@ const ChatSection = ({ prevChats, err }) => {
                         value={userText}
                         onChange={(e) => setUserText(e.target.value)}
                         placeholder="Type your message..."
-                        className="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="flex-1  px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         onKeyDown={(e) => e.key === "Enter" && onClickSend()}
                     />
 
                     <button
                         onClick={onClickSend}
                         disabled={loading}
-                        className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+                        className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                             loading
                                 ? "bg-gray-400 cursor-not-allowed"
                                 : "bg-blue-500 hover:bg-blue-600 text-white"
