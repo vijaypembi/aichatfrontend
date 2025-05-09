@@ -203,7 +203,7 @@ const ChatSection = ({ prevChats, err }) => {
                                 : "bg-blue-500 hover:bg-blue-600 text-white"
                         }`}
                     >
-                        {!loading ? (
+                        {loading ? (
                             <>
                                 <span
                                     className="inline-block h-5 w-5 animate-spin rounded-full border-2 mr-2 mt-1 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
